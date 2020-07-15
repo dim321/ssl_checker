@@ -13,7 +13,6 @@ gem 'grape'
 gem 'grape-entity'
 gem 'sidekiq'
 gem 'sidekiq-scheduler'
-gem 'devise'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'

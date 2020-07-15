@@ -58,7 +58,7 @@ class Domain < ApplicationRecord
   end
 
   def update_status
-    last_message = self.status_events.last #последнее сообщение в журнале событий для данного домена
+    last_message = self.status_events.last.message #последнее сообщение в журнале событий для данного домена
     current_result = self.check_ssl # текущий результат проверки сертификата для данного домена
 
     # Если предыдущее сообщение в журнале событий для данного домена отличается от полученного
