@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
 
   mount API => '/'
-  mount Sidekiq::Web => '/sidekiq'
+
+  Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+    username == 'user' && password == 'password'
+  end
+    mount Sidekiq::Web => '/sidekiq'
+
 
 end
