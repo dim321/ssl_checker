@@ -1,0 +1,6 @@
+worker: docker-compose up -d
+worker: bundle install
+worker: bundle exec rails db:create
+worker: bundle exec rails db:migrate
+api: bundle exec rails s -p 3000
+worker: bundle exec sidekiq

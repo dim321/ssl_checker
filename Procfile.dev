@@ -1,0 +1,3 @@
+worker: docker-compose up -d
+worker: bundle exec sidekiq
+api: bundle exec rails s -p 3000
