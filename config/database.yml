@@ -20,6 +20,12 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  #password: <%= Rails.application.credentials.postgres_password %>
+  password: postgres
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+
 
 development:
   <<: *default
@@ -81,5 +87,4 @@ test:
 production:
   <<: *default
   database: ssl_checker_production
-  username: ssl_checker
-  password: <%= ENV['SSL_CHECKER_DATABASE_PASSWORD'] %>
+
